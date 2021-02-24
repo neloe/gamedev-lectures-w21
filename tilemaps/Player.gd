@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-export var GRAVITY = 200
-export var MAX_SPEED = 300
-export var ACCEL = 100
-export var FRICTION = 600
-export var JUMP = 100
+const GRAVITY = 200
+const MAX_SPEED = 300
+const ACCEL = 100
+const FRICTION = 600
+const JUMP = 100
 
 onready var anim = $AnimatedSprite
 var velocity = Vector2.ZERO
