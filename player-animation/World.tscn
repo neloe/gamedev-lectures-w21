@@ -7,9 +7,6 @@
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 502.642, 205.325 )
-
 [node name="YSort" type="YSort" parent="YSort"]
 
 [node name="Crate" parent="YSort/YSort" instance=ExtResource( 1 )]
@@ -21,3 +18,6 @@ position = Vector2( 396.85, 346.053 )
 
 [node name="Crate3" parent="YSort/YSort" instance=ExtResource( 1 )]
 position = Vector2( 244.46, 366.69 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 502.642, 205.325 )
