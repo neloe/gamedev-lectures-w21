@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Chat.gd" type="Script" id=1]
+
+[node name="Chat" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserList" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 255.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/UserList"]
+margin_right = 255.0
+margin_bottom = 14.0
+text = "Online Users"
+align = 1
+
+[node name="OnlineUsers" type="ItemList" parent="HBoxContainer/UserList"]
+margin_top = 18.0
+margin_right = 255.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="ChatBox" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 259.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Chat" type="ItemList" parent="HBoxContainer/ChatBox"]
+margin_right = 765.0
+margin_bottom = 572.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ChatBox"]
+margin_top = 576.0
+margin_right = 765.0
+margin_bottom = 600.0
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/ChatBox/HBoxContainer"]
+margin_right = 718.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="SendMsg" type="Button" parent="HBoxContainer/ChatBox/HBoxContainer"]
+margin_left = 722.0
+margin_right = 765.0
+margin_bottom = 24.0
+disabled = true
+text = "Send"

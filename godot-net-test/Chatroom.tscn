@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Chat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Chatroom.gd" type="Script" id=2]
+
+[node name="Chatroom" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UsernameForm" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/UsernameForm"]
+margin_top = 5.0
+margin_right = 326.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "Username"
+
+[node name="UsernameEdit" type="LineEdit" parent="Panel/VBoxContainer/UsernameForm"]
+margin_left = 330.0
+margin_right = 984.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+text = "Your Name Here"
+
+[node name="HostOrConnect" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 28.0
+margin_right = 984.0
+margin_bottom = 52.0
+
+[node name="ButtonBox" type="HBoxContainer" parent="Panel/VBoxContainer/HostOrConnect"]
+margin_right = 326.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Host" type="Button" parent="Panel/VBoxContainer/HostOrConnect/ButtonBox"]
+margin_right = 74.0
+margin_bottom = 24.0
+text = "Host Chat"
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/HostOrConnect/ButtonBox"]
+margin_left = 78.0
+margin_right = 241.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Connect" type="Button" parent="Panel/VBoxContainer/HostOrConnect/ButtonBox"]
+margin_left = 245.0
+margin_right = 326.0
+margin_bottom = 24.0
+text = "Connect to"
+
+[node name="Disconnect" type="Button" parent="Panel/VBoxContainer/HostOrConnect/ButtonBox"]
+visible = false
+margin_left = 167.0
+margin_right = 179.0
+margin_bottom = 20.0
+text = "Disconnect"
+
+[node name="HostInput" type="LineEdit" parent="Panel/VBoxContainer/HostOrConnect"]
+margin_left = 330.0
+margin_right = 984.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+text = "localhost"
+
+[node name="Chat" parent="Panel/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 56.0
+margin_right = 984.0
+margin_bottom = 560.0
+size_flags_vertical = 3
+[connection signal="pressed" from="Panel/VBoxContainer/HostOrConnect/ButtonBox/Host" to="." method="_on_Host_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HostOrConnect/ButtonBox/Connect" to="." method="_on_Connect_pressed"]
